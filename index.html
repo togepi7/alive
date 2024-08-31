@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Flask App Alive</title>
+</head>
+<body>
+    <h1>Flask App Keeper</h1>
+    <p>This page keeps your Flask app alive by pinging it every 5 minutes.</p>
+
+    <script>
+        function pingServer() {
+            fetch('https://image-compressor-6o1w.onrender.com//')
+                .then(response => console.log('Pinged the server'))
+                .catch(error => console.error('Error pinging the server:', error));
+        }
+
+        setInterval(pingServer, 300000); // Ping every 5 minutes (300,000 ms)
+        pingServer(); // Initial ping when page loads
+    </script>
+</body>
+</html>
